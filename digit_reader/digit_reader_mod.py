@@ -7,7 +7,7 @@ import os
 def reader(img, decimal):
 
     #load model
-    model_path = os.getcwd() +  "\\source\\weights\\best.pt"
+    model_path = os.getcwd() +  "\\digit_reader\\source\\weights\\best.pt"
     model = YOLO(model_path)
 
     #predict

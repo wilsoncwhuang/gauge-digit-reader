@@ -50,7 +50,24 @@ def digit_index():
 #         return render_template('gauge_index.html', reader_text='The Current Value is {}'.format(val))
 
 
-# @app.route("/reader_api", methods=['POST'])
+# @app.route("/digit_reader", methods = ['POST'])
+# def digit_reader():
+#     if 'image' not in request.files:
+#         return "No file part"
+#     else:
+#         image = request.files['image']
+#         if image.filename == '':
+#             return "No selected file"
+#
+#         decimal = float(request.form.get('decimal'))
+#
+#         image_byte = image.read()
+#         image_arr = cv2.imdecode(np.frombuffer(image_byte, np.uint8), -1)
+#         val = digit_reader_mod.reader(image_arr, decimal)
+#         return render_template('digit_index.html', reader_text='The Current Value is {}'.format(val))
+#
+# # @app.route("/gauge_reader_api", methods=['POST'])
+
 # def reader_api():
 #     # print post data
 #     res = request.json['image']
