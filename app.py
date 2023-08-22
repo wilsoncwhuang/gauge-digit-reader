@@ -187,7 +187,7 @@ def digit_reader_api():
         status=200,
         response=json.dumps({
             "status": "success",
-            "value": val,
+            "value": float(val),
         }),
     )
 

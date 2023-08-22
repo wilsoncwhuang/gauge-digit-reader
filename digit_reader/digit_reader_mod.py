@@ -7,7 +7,7 @@ import os
 def reader(img, decimal):
 
     #load model
-    model_path = os.getcwd() +  "\\digit_reader\\source\\weights\\best.pt"
+    model_path = os.getcwd() + "/digit_reader/source/weights/best.pt"
     model = YOLO(model_path)
 
     #predict
@@ -30,7 +30,7 @@ def reader(img, decimal):
             display = boxes.data[id]
             display_flg = True
             break
-    
+    print(boxes.data)
     #read all the digits if it is in the display screen
     boxes_x_lst = []
     boxes_id_lst = []
