@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reader Selection</title>
+</head>
+<body>
+    <h1>Flask API Reader Selection Demo</h1>
+    <p>Please choose a reader to enter:</p>
+	
+    <form action="/gauge_index">
+        <button type="submit">Gauge Reader</button>
+    </form>
+    
+    <form action="/digit_index">
+        <button type="submit">Digit Reader</button>
+    </form>
+
+    <script>
+        function redirectToWebsite(filename) {
+            window.location.href = filename;
+        }
+    </script>
+</body>
+</html>

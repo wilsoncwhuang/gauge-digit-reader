@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Digit Reader Demo</title>
+</head>
+<body>
+    <h1>Digit Reader Demo</h1>
+    <form action="{{ url_for('digit_reader')}}" method="POST" enctype="multipart/form-data">
+	
+		<label for="quantity">decimal:</label>
+        <input type="number" id="decimal" name="decimal" min="0" max="360" required>
+		<br>
+		
+        <input type="file" name="image" accept="image/*" required>
+        <br>
+		
+        <input type="submit" value="Predict">
+		<h4>{{ reader_text }} </h4>
+		<br>
+		
+		<label>Read Value:</label>
+    </form>
+    
+    <h2>Uploaded Image</h2>
+    <img id="uploadedImage" src="" alt="Uploaded Image" style="max-width: 100%; height: auto;">
+    
+    <script>
+        const fileInput = document.querySelector('input[type="file"]');
+        const uploadedImage = document.getElementById('uploadedImage');
+        
+        fileInput.addEventListener('change', () => {
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    uploadedImage.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
