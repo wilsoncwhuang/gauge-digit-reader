@@ -58,7 +58,7 @@ def digit_reader():
         image_byte = image.read()
         image_arr = cv2.imdecode(np.frombuffer(image_byte, np.uint8), -1)
         val = digit_reader_mod.reader(image_arr, decimal)
-        return render_template('index.html', reader_text='The Current Value is {}'.format(val))
+        return render_template('digit_index.html', reader_text='The Current Value is {}'.format(val))
 
 # @app.route("/gauge_reader_api", methods=['POST'])
 # def reader_api():
