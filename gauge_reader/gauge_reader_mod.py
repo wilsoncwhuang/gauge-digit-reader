@@ -46,7 +46,7 @@ def calibrate_gauge(img):
     #detect circles
     #restricting the search from 35-48% of the possible radii gives fairly good results across different samples. 
     #Remember that these are pixel values which correspond to the possible radii search range.
-    circles = cv2.HoughCircles(gray, cv2.HOUGH_GRADIENT_ALT, 1, 20, np.array([]), 100, 0.8, int(height*0.35), int(height*0.48))
+    circles = cv2.HoughCircles(gray, cv2.HOUGH_GRADIENT, 1, 20, np.array([]), 50, 50, int(height*0.35), int(height*0.48))
     # average found circles, found it to be more accurate than trying to tune HoughCircles parameters to get just the right one
     a, b, c = circles.shape
     x,y,r = avg_circles(circles, b)

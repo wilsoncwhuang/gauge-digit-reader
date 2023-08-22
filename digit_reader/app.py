@@ -25,7 +25,6 @@ def reader():
         val = digit_reader.reader(image_arr, decimal)
         return render_template('index.html', reader_text='The Current Value is {}'.format(val))
 
-if __name__ == '__main__':
-    app.run()
-   
-    
+# if __name__ == '__main__':
+#     app.run()
+#
